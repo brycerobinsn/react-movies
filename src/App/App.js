@@ -1,11 +1,12 @@
 import './App.css';
 import { useState } from 'react';
 import {Routes, Route} from 'react-router-dom'
-import NavBar from '../pages/NavBar'
+import NavBar from '../components/NavBar'
 import ActorListPage from '../pages/ActorListPage'
 import MoviesListPage from '../pages/MoviesListPage'
 import LoginPage from '../pages/LoginPage'
 import {movies} from '../data'
+import MovieDetailPage from '../pages/MovieDetailPage';
 
 function App() {
   const [user, setUser] = useState({})
@@ -14,10 +15,11 @@ function App() {
     <main className='App'>
       {user ?
       <>
-        <NavBar />
+        <NavBar user={user}/>
         <Routes>
-          <Route path='/actors' element={<ActorListPage/>}/>
           <Route path='/' element={<MoviesListPage/>}/>
+          <Route path='/movies/:movieTitle' element={<MovieDetailPage/>}/>
+          <Route path='/actors' element={<ActorListPage/>}/>
         </Routes>
       </>
       :
