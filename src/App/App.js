@@ -1,18 +1,14 @@
 import './App.css';
 import { useState } from 'react';
 import {Routes, Route} from 'react-router-dom'
-import NavBar from '../components/NavBar'
-import ActorListPage from '../components/ActorListPage'
-import MoviesListPage from '../components/MoviesListPage'
-import LoginPage from '../components/LoginPage'
+import NavBar from '../pages/NavBar'
+import ActorListPage from '../pages/ActorListPage'
+import MoviesListPage from '../pages/MoviesListPage'
+import LoginPage from '../pages/LoginPage'
+import {movies} from '../data'
 
 function App() {
-  const [user, setUser] = useState(null)
-   const handleSubmit = async (evt) => {
-    evt.preventDefault()
-        const setUser = {...this.state}
-    
-}
+  const [user, setUser] = useState({})
 
   return (
     <main className='App'>
@@ -25,7 +21,7 @@ function App() {
         </Routes>
       </>
       :
-      <LoginPage/>
+      <LoginPage setUser={setUser}/>
       }
     </main>
     
