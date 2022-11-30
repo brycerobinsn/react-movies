@@ -9,7 +9,7 @@ import {movies} from '../data'
 import MovieDetailPage from '../pages/MovieDetailPage';
 
 function App() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
 
   return (
     <main className='App'>

@@ -1,0 +1,11 @@
+.actor{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    border-radius: 15px;
+}
